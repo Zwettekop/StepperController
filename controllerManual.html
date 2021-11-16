@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <script type="module" src="./scripts/mainControllerManual.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo">
+    <title>Polaire configuratie</title>
+
+</head>
+
+<body>
+    <header>
+        <h1>BLE Polair</h1>
+    </header>
+    <div class="paneel">
+        <div class="container">
+            <div class="container_item">
+                <nav class="resp">
+                    <a href="./index.html">Generieke controller</a>|
+                    <a href="./controllerManual.html">Manual control</a>|
+                    <a href="./controllerSweep.html">Sweep</a>|
+                    <a href="./controllerGUI.html">Custom sweep</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="paneel">
+        <div class="container">
+            <div class="container_item">
+                <h2>BLE connection</h2>
+            </div>
+            <div class="container_item">
+                <button type="button" id="btnBLE" class="resp">Connect to project box</button>
+            </div>
+            <div class="container_item">
+                <label id="lblStatus" class="resp">Not connected</label>
+            </div>
+        </div>
+    </div>
+    <div class="paneel">
+        <div class="container">
+            <div class="container_item">
+                <h2>Control stepper motor</h2>
+            </div>
+            <!--Speed slider-->
+            <div class="container_item">
+                <label class="resp">Speed</label>
+                <label class="resp">0.1</label>
+                <input id="sldSpeed" type="range" min="0.1" max="1" step="0.1">
+                <input type="number" id="iptSpeed" style="width: 2.5em" value="1" min="1" class="resp">
+                <label class="resp">cm/s</label>
+            </div>
+            <div class="container-item">
+                <label id="lblSpeed" class="resp">0.6 cm/s</label>
+            </div>
+            <br>
+            <br>
+            <!--Up button-->
+            <div class="container_item">
+                <button type="button" id="btnGoUp" class="resp">Go up</button>
+            </div>
+            <!--Down button button-->
+            <div class="container_item">
+                <button type="button" id="btnGoDown" class="resp">Go down</button>
+            </div>
+        </div>
+    </div>
+    <div class="paneel">
+        <div class="container">
+            <div class="container_item">
+                <label class="resp">Mobile version: </label>
+                <input id="chkMobile" type="checkbox">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

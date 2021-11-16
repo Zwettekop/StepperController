@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <script type="module" src="./scripts/mainControllerGUI.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo">
+    <title>Polaire configuratie</title>
+
+</head>
+
+<body>
+    <header>
+        <h1>BLE Controller</h1>
+    </header>
+    <div class="paneel">
+        <div class="container">
+            <div class="container_item">
+                <nav class="resp">
+                    <a href="./index.html">Generieke controller</a>|
+                    <a href="./controllerManual.html">Manual control</a>|
+                    <a href="./controllerSweep.html">Sweep</a>|
+                    <a href="./controllerGUI.html">Custom sweep</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="paneel">
+        <div class="container">
+            <div class="container_item">
+                <h2>BLE connection</h2>
+            </div>
+            <div class="container_item">
+                <button type="button" id="btnBLE" class="resp">Connect to project box</button>
+            </div>
+            <div class="container_item">
+                <label id="lblStatus" class="resp">Not connected</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="paneel">
+        <div class="container">
+            <div class="container_item">
+                <h2>Controller</h2>
+            </div>
+            <div>
+                <canvas id="idCanvas" width="500" height="400">Canvas not supported</canvas>
+            </div>
+            <div class="container_item">
+                <button type="button" id="btnAddPoint" class="resp">+</button>
+                <button type="button" id="btnRemovePoint" class="resp">-</button>
+            </div>
+            <!--Interpolation method slider-->
+            <div class="container_item">
+                <label class="resp">Spline type</label>
+                <input id="sldInterpolationMethod" type="range" min="0" max="2" value="2">
+            </div>
+            <div class="container_item">
+                <label id="lblInterpolationMethod" class="resp">3rd degree polynomial</label>
+            </div>
+            <br> <br>
+
+        </div>
+    </div>
+
+    <div class="paneel">
+        <div class="container">
+            <!--Amplitude slider-->
+            <div class="container_item">
+                <label class="resp">Amplitude</label>
+                <input id="sldAmplitude" type="range" min="0" max="20">
+                <input type="number" id="iptAmplitude" style="width: 2.5em" value="20" class="resp">
+                <label class="resp">cm</label>
+            </div>
+            <div class="container_item">
+                <label id="lblAmplitude" class="resp">10 cm</label>
+            </div>
+            <br> <br>
+            <!--Speed slider-->
+            <div class="container_item">
+                <label class="resp">Periode</label>
+                <input id="sldSpeed" type="range" min="0" max="1" step="0.1">
+                <input type="number" id="iptSpeed" style="width: 2.5em" value="1" class="resp">
+                <label class="resp">s</label>
+            </div>
+            <div class="container_item">
+                <label id="lblSpeed" class="resp">0.5 s</label>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="paneel">
+        <div class="container">
+            <div class="container_item">
+                <label class="resp">Mobile version: </label>
+                <input id="chkMobile" type="checkbox">
+                <label class="resp">Debugging; </label>
+                <input id="chkDebugging" type="checkbox">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

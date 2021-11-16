@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <script type="module" src="scripts/mainBLEGeneric.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo">
+    <title>BLE for Js</title>
+
+</head>
+
+<body>
+    <header>
+        <h1>BLE for Js</h1>
+    </header>
+    <div class="paneel">
+        <div class="container">
+            <div class="container_item">
+                <nav class="resp">
+                    <a href="./index.html">Generieke controller</a>|
+                    <a href="./controllerManual.html">Manual control</a>|
+                    <a href="./controllerSweep.html">Sweep</a>|
+                    <a href="./controllerGUI.html">Custom sweep</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="paneel">
+        <div class="container">
+            <div class="container_item">
+                <h2>UUID configuratie</h2>
+            </div>
+            <div class="container_item">
+                <label id="lblService" class="resp">Service: </label>
+                <input type="text" id=iptService value="19b10000-e8f2-537e-4f6c-d104768a1214" class="resp">
+            </div>
+            <div class="container_item">
+                <label id="lblCharacteristic" class="resp">Characteristic: </label>
+                <input type="text" id=iptCharacteristic value="19b10001-e8f2-537e-4f6c-d104768a1214" class="resp">
+            </div>
+            <div class="container_item">
+                <button type="button" id="btnBLE" class="resp">Connect to the BLE pheripheral</button>
+            </div>
+            <div class="container_item">
+                <label id="lblStatus" class="resp">Not connected</label>
+            </div>
+        </div>
+    </div>
+    <div class="paneel">
+        <div class="container">
+            <div class="container_item">
+                <h2>Write and read data</h2>
+            </div>
+            <div class="container_item">
+                <button type="button" id="btnRead" class="resp">Read delay</button>
+                <!--Deze input wordt gebruikt als een label daarom is de id lblRes en niet iptRes-->
+                <input disabled type="text" id="lblRes" class="resp">
+            </div>
+            <div class="container_item">
+                <button type="button" id="btnWrite" class="resp">Write delay</button>
+                <input id="iptWaarde" type="number" value="50" class="resp">
+            </div>
+        </div>
+    </div>
+    <div class="paneel">
+        <div class="container">
+            <div class="container_item">
+                <label class="resp">Mobile version: </label>
+                <input id="chkMobile" type="checkbox">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

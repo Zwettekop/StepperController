@@ -70,6 +70,8 @@ function stopMoving() {
 
 //*Movement controls
 
+//? For touch events you have to use .addEventlistener() or it won't work: .ontouchdown doesn't do anything!
+
 //Keys
 document.addEventListener("keydown", (event) => {
     if (event.key === 'ArrowLeft') {
@@ -87,15 +89,22 @@ document.addEventListener("keyup", (event) => {
 document.getElementById("btnGoUp").onmousedown = goUp;
 document.getElementById("btnGoDown").onmousedown = goDown;
 window.addEventListener("mouseup", stopMoving);
+document.getElementById("btnGoUp").addEventListener('touchstart', goUp);
+document.getElementById("btnGoUp").addEventListener('touchend', stopMoving);
+document.getElementById("btnGoDown").addEventListener('touchstart', goDown);
+document.getElementById("btnGoDown").addEventListener('touchend', stopMoving);
+
 
 //SVG's
-document.getElementById("svgBtnGoUp").ontouchstart = function () {
-    evt.preventDefault();
-    goUp;
-}
+document.getElementById("svgBtnGoUp").onmousedown = goUp;
 document.getElementById("svgBtnGoUp").onmouseup = stopMoving;
 document.getElementById("svgBtnGoDown").onmousedown = goDown;
 document.getElementById("svgBtnGoDown").onmouseup = stopMoving;
+
+document.getElementById("svgBtnGoUp").addEventListener('touchstart', goUp);
+document.getElementById("svgBtnGoUp").addEventListener('touchend', stopMoving);
+document.getElementById("svgBtnGoDown").addEventListener('touchstart', goDown);
+document.getElementById("svgBtnGoDown").addEventListener('touchend', stopMoving);
 
 
 //Send move command

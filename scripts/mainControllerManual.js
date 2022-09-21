@@ -50,26 +50,55 @@ document.getElementById('btnBLE').onclick = function () {
 };
 
 
-//Button up pressed
-document.getElementById("btnGoUp").onmousedown = function () {
+function goUp() {
     console.log("Go up");
     isMoving = true;
     writeCommand(1);
 }
-//Button down pressed
-document.getElementById("btnGoDown").onmousedown = function () {
+function goDown() {
     console.log("Go down");
     isMoving = true;
     writeCommand(-1);
 }
-
-window.addEventListener("mouseup", function () {
+function stopMoving() {
     if (isMoving) {
         console.log("Stop moving");
         isMoving = false;
     }
+}
+
+
+//*Movement controls
+
+//Keys
+document.addEventListener("keydown", (event) => {
+    if (event.key === 'ArrowLeft') {
+        goDown();
+    } if (event.key === 'ArrowRight') {
+        goUp();
+    }
 });
 
+document.addEventListener("keyup", (event) => {
+    stopMoving();
+})
+
+//Buttons
+document.getElementById("btnGoUp").onmousedown = goUp;
+document.getElementById("btnGoDown").onmousedown = goDown;
+window.addEventListener("mouseup", stopMoving);
+
+//SVG's
+document.getElementById("svgBtnGoUp").ontouchstart = function () {
+    evt.preventDefault();
+    goUp;
+}
+document.getElementById("svgBtnGoUp").onmouseup = stopMoving;
+document.getElementById("svgBtnGoDown").onmousedown = goDown;
+document.getElementById("svgBtnGoDown").onmouseup = stopMoving;
+
+
+//Send move command
 function writeCommand(nr) {
     /* Legend:
     -1 go down
@@ -82,7 +111,6 @@ function writeCommand(nr) {
             else
                 schrijfUint32Value(karRichting, 0);
         });
-
 }
 
 //*Speed max adjustment

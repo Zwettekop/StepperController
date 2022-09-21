@@ -58,13 +58,38 @@
             <br>
             <br>
             <!--Up button-->
-            <div class="container_item">
+            <div class="disable-select container_item">
                 <button type="button" id="btnGoUp" class="resp">Go up</button>
             </div>
             <!--Down button button-->
-            <div class="container_item">
+            <div class="disable-select container_item">
                 <button type="button" id="btnGoDown" class="resp">Go down</button>
             </div>
+            <div class="container_item">
+                <p>
+                    Alternatively you can use the left and right keys on your keyboard to move. Left is down and right
+                    is
+                    up.
+                </p>
+            </div>
+
+            <div class="disable-select container-item" id="svgBtnGoUp">
+                <svg viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="5em" height="5em">
+                    <!-- viewBox defines the coordinate system.-->
+                    <polygon points="0 -1, 1 0, -1 0 " fill=" white" stroke-width="0" />
+                    <rect x="-0.4" y="0" width="0.8" height="1" fill=" white" stroke-width="0" />
+                </svg>
+            </div>
+
+            <div class="disable-select container-item" id="svgBtnGoDown">
+                <svg viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="5em" height="5em">
+                    <polygon points="0 1, 1 0, -1 0 " fill=" white" stroke-width="0" />
+                    <rect x="-0.4" y="-1" width="0.8" height="1" fill=" white" stroke-width="0" />
+                </svg>
+            </div>
+
         </div>
     </div>
     <div class="paneel">

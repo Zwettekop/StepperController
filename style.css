@@ -83,6 +83,17 @@ button:active {
     filter: brightness(110%);
 }
 
+/* SVG buttons */
+.svg-button:hover {
+    filter: brightness(90%);
+}
+
+.svg-button:active {
+    /*background-color: #3e8e41;*/
+    transform: translateY(1px);
+    filter: brightness(110%);
+}
+
 input[type=text] {
     padding: 10px;
     border-radius: 10px;
